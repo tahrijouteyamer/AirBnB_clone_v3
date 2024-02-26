@@ -1,6 +1,4 @@
-#!/usr/bin/python3
-"""
-Contains the TestAmenityDocs classes
+ontains the TestAmenityDocs classes
 """
 
 from datetime import datetime
@@ -68,7 +66,7 @@ class TestAmenity(unittest.TestCase):
         self.assertTrue(hasattr(amenity, "updated_at"))
 
     def test_name_attr(self):
-        """Test that Amenity has attribute name, and it's as an empty string"""
+        """Test that Amenity has attribute name, and it's an empty string"""
         amenity = Amenity()
         self.assertTrue(hasattr(amenity, "name"))
         if models.storage_t == 'db':
@@ -104,3 +102,4 @@ class TestAmenity(unittest.TestCase):
         amenity = Amenity()
         string = "[Amenity] ({}) {}".format(amenity.id, amenity.__dict__)
         self.assertEqual(string, str(amenity))
+
