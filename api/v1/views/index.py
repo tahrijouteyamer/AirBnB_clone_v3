@@ -35,7 +35,7 @@ def storage_counts():
     return jsonify(cls_counts)
 
 
-@app_views.route("/stats", methods=['GET'], strict_slashes=False)
+@app_views.route("/api/v1/stats", methods=['GET'], strict_slashes=False)
 def object_counts():
     '''
         return count of each object type
