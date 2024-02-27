@@ -127,7 +127,7 @@ TestBaseModel class:
 * `def test_user_class_docstring(self)` - Test for the User class docstring
 
 
-## Examples of use
+## some Examples of use
 ```
 vagrantAirBnB_clone$./console.py
 (hbnb) help
@@ -151,7 +151,7 @@ EOF  all  create  destroy  help  quit  show  update
 ```
 
 ## Bugs
-No known bugs at this time. 
+No other known bugs at this time. 
 
 ## Authors
 Hassan Hassan - [Github](https://github.com/hass4all) 
