@@ -64,17 +64,18 @@ def update_user(user_id):
     '''
         update existing user object
     '''
+    user = storage.get("User", user_id)
+    if user is None:
+        abort(404)
+
     if not request.get_json():
         return jsonify({"error": "Not a JSON"}), 400
-    obj = storage.get("User", user_id)
-    if obj is None:
-        abort(404)
+
     obj_data = request.get_json()
     ignore = ("id", "email", "created_at", "updated_at")
-    for k in obj_data.keys():
-        if k in ignore:
-            pass
-        else:
-            setattr(obj, k, obj_data[k])
-    obj.save()
-    return jsonify(obj.to_dict()), 200
+    for k, v in obj_data.items():
+        if k not in ignore:
+            setattr(user, k, v)
+    user.save()
+    return jsonify(user.to_dict()), 200
+
